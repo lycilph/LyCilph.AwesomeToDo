@@ -1,0 +1,6 @@
+@LyCilph.AwesomeToDo.Web_HostAddress = https://localhost:7149
+
+GET {{LyCilph.AwesomeToDo.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
