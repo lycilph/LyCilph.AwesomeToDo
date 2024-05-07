@@ -1,5 +1,4 @@
-﻿using LyCilph.SharedKernel;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace LyCilph.AwesomeToDo.Core.ProjectAggregate;
 

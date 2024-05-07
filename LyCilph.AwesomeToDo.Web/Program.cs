@@ -1,12 +1,12 @@
 using FastEndpoints;
 using LyCilph.AwesomeToDo.Core.ProjectAggregate;
-using LyCilph.AwesomeToDo.UseCases.Projects.Create;
 using LyCilph.AwesomeToDo.Infrastructure;
-using System.Reflection;
 using LyCilph.AwesomeToDo.Infrastructure.Data;
-using Serilog;
-using LyCilph.SharedKernel;
+using LyCilph.AwesomeToDo.UseCases.Projects.Create;
+using LyCilph.AwesomeToDo.Web.Utils;
 using MediatR;
+using Serilog;
+using System.Reflection;
 
 namespace LyCilph.AwesomeToDo.Web;
 

@@ -1,9 +1,10 @@
-﻿using LyCilph.AwesomeToDo.Core.ProjectAggregate;
-using LyCilph.SharedKernel;
+﻿using LyCilph.AwesomeToDo.Core.Interfaces;
+using LyCilph.AwesomeToDo.Core.ProjectAggregate;
+using MediatR;
 
 namespace LyCilph.AwesomeToDo.UseCases.Projects.AddToDoItem;
 
-public class AddToDoItemHandler : ICommandHandler<AddToDoItemCommand, int>
+public class AddToDoItemHandler : IRequestHandler<AddToDoItemCommand, int>
 {
     private readonly IRepository<Project> _repository;
 

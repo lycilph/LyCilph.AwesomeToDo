@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\LyCilph.SharedKernel\LyCilph.SharedKernel.csproj" />
-  </ItemGroup>
-
 </Project>

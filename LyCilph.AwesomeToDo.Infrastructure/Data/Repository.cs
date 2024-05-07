@@ -1,4 +1,4 @@
-﻿using LyCilph.SharedKernel;
+﻿using LyCilph.AwesomeToDo.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -8,7 +8,7 @@ public class Repository<T> : IRepository<T> where T : class, IAggregateRoot
 {
     private readonly AppDbContext _dbContext;
 
-    public Repository(AppDbContext dbContext) 
+    public Repository(AppDbContext dbContext)
     {
         _dbContext = dbContext;
     }

@@ -1,5 +1,5 @@
-﻿using LyCilph.AwesomeToDo.Infrastructure.Data;
-using LyCilph.SharedKernel;
+﻿using LyCilph.AwesomeToDo.Core.Interfaces;
+using LyCilph.AwesomeToDo.Infrastructure.Data;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LyCilph.AwesomeToDo.Infrastructure;

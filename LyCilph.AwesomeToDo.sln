@@ -9,15 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F754D4AB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LyCilph.AwesomeToDo.Core", "LyCilph.AwesomeToDo.Core\LyCilph.AwesomeToDo.Core.csproj", "{63DD05B4-FC29-4DB0-BFE6-5121DF4E07FD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{B4824C7A-4ECA-417F-8E65-0AAD90D25854}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LyCilph.AwesomeToDo.Web", "LyCilph.AwesomeToDo.Web\LyCilph.AwesomeToDo.Web.csproj", "{1C708B60-AA20-4A13-B4D9-654CBFC68E39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyCilph.AwesomeToDo.Web", "LyCilph.AwesomeToDo.Web\LyCilph.AwesomeToDo.Web.csproj", "{1C708B60-AA20-4A13-B4D9-654CBFC68E39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LyCilph.AwesomeToDo.UseCases", "LyCilph.AwesomeToDo.UseCases\LyCilph.AwesomeToDo.UseCases.csproj", "{3990A4D0-B17A-4621-B3E0-3B6B6D308574}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyCilph.SharedKernel", "LyCilph.SharedKernel\LyCilph.SharedKernel.csproj", "{19567733-E820-4C59-8886-E596B409D683}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyCilph.AwesomeToDo.UseCases", "LyCilph.AwesomeToDo.UseCases\LyCilph.AwesomeToDo.UseCases.csproj", "{3990A4D0-B17A-4621-B3E0-3B6B6D308574}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyCilph.AwesomeToDo.Infrastructure", "LyCilph.AwesomeToDo.Infrastructure\LyCilph.AwesomeToDo.Infrastructure.csproj", "{1B6B6324-FE0C-46D5-A570-A3B81E00341F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LyCilph.AwesomeToDo.Infrastructure", "LyCilph.AwesomeToDo.Infrastructure\LyCilph.AwesomeToDo.Infrastructure.csproj", "{1B6B6324-FE0C-46D5-A570-A3B81E00341F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +29,6 @@ Global
 		{1C708B60-AA20-4A13-B4D9-654CBFC68E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C708B60-AA20-4A13-B4D9-654CBFC68E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C708B60-AA20-4A13-B4D9-654CBFC68E39}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19567733-E820-4C59-8886-E596B409D683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19567733-E820-4C59-8886-E596B409D683}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19567733-E820-4C59-8886-E596B409D683}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19567733-E820-4C59-8886-E596B409D683}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3990A4D0-B17A-4621-B3E0-3B6B6D308574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3990A4D0-B17A-4621-B3E0-3B6B6D308574}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3990A4D0-B17A-4621-B3E0-3B6B6D308574}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -52,7 +44,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{63DD05B4-FC29-4DB0-BFE6-5121DF4E07FD} = {32D37F69-A977-4BF7-813F-11C2C20D1DF9}
 		{1C708B60-AA20-4A13-B4D9-654CBFC68E39} = {32D37F69-A977-4BF7-813F-11C2C20D1DF9}
-		{19567733-E820-4C59-8886-E596B409D683} = {B4824C7A-4ECA-417F-8E65-0AAD90D25854}
 		{3990A4D0-B17A-4621-B3E0-3B6B6D308574} = {32D37F69-A977-4BF7-813F-11C2C20D1DF9}
 		{1B6B6324-FE0C-46D5-A570-A3B81E00341F} = {32D37F69-A977-4BF7-813F-11C2C20D1DF9}
 	EndGlobalSection

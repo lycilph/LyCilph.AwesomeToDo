@@ -1,9 +1,8 @@
 ﻿using MediatR;
 using System.Diagnostics;
 using System.Reflection;
-using Microsoft.Extensions.Logging;
 
-namespace LyCilph.SharedKernel;
+namespace LyCilph.AwesomeToDo.Web.Utils;
 
 public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
   where TRequest : IRequest<TResponse>

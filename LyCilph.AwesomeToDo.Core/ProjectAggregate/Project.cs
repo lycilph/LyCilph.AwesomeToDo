@@ -1,4 +1,4 @@
-﻿using LyCilph.SharedKernel;
+﻿using LyCilph.AwesomeToDo.Core.Interfaces;
 
 namespace LyCilph.AwesomeToDo.Core.ProjectAggregate;
 
@@ -6,7 +6,7 @@ public class Project : EntityBase, IAggregateRoot
 {
     public string Name { get; private set; }
 
-    
+
     private readonly List<ToDoItem> _items = [];
     public IEnumerable<ToDoItem> Items => _items.AsReadOnly();
 

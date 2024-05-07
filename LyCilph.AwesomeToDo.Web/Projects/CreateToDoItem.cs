@@ -39,7 +39,7 @@ public class CreateToDoItem : Endpoint<CreateToDoItemRequest>
             return;
         }
 
-        if (result >= 0) 
+        if (result >= 0)
         {
             await SendOkAsync(cancellationToken);
         }

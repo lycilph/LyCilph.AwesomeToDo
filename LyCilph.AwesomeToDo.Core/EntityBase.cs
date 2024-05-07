@@ -1,4 +1,4 @@
-﻿namespace LyCilph.SharedKernel;
+﻿namespace LyCilph.AwesomeToDo.Core;
 
 public abstract class EntityBase
 {
