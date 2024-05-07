@@ -24,26 +24,29 @@ public class Program
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
 
         builder.Services
             .AddFastEndpoints()
-            .SwaggerDocument(); //define a swagger document
+            .SwaggerDocument(o => 
+            { 
+                o.EnableJWTBearerAuth = false;
+                o.ShortSchemaNames = true;
+                o.DocumentSettings = s =>
+                {
+                    s.Title = "AwesomeToDo";
+                    s.Version = "v1";
+                };
+            }); //define a swagger document
+
         builder.Services.AddInfrastructureServices();
 
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI(options => { options.EnableTryItOutByDefault(); });
-        }
+            app.UseSwaggerGen(uiConfig: config => config.DocExpansion = "list");
 
         app.UseHttpsRedirection();
-
         app.UseAuthorization();
-
         app.UseFastEndpoints();
 
         SeedDatabase(app);
