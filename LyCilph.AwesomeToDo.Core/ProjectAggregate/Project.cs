@@ -1,4 +1,5 @@
-﻿using LyCilph.AwesomeToDo.Core.Interfaces;
+﻿using CommunityToolkit.Diagnostics;
+using LyCilph.AwesomeToDo.Core.Interfaces;
 
 namespace LyCilph.AwesomeToDo.Core.ProjectAggregate;
 
@@ -19,7 +20,7 @@ public class Project : EntityBase, IAggregateRoot
 
     public void AddItem(ToDoItem item)
     {
+        Guard.IsNotNull(item, nameof(item));
         _items.Add(item);
-        // Send event here
     }
 }

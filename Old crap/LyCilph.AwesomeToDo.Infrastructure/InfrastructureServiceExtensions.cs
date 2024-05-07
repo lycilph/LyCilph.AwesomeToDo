@@ -1,6 +1,5 @@
 ﻿using LyCilph.AwesomeToDo.Core.Interfaces;
 using LyCilph.AwesomeToDo.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LyCilph.AwesomeToDo.Infrastructure;

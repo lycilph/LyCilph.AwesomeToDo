@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FastEndpoints" Version="5.25.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
       <PrivateAssets>all</PrivateAssets>
@@ -17,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LyCilph.AwesomeToDo.Core\LyCilph.AwesomeToDo.Core.csproj" />
     <ProjectReference Include="..\LyCilph.AwesomeToDo.Infrastructure\LyCilph.AwesomeToDo.Infrastructure.csproj" />
+    <ProjectReference Include="..\LyCilph.AwesomeToDo.UseCases\LyCilph.AwesomeToDo.UseCases.csproj" />
   </ItemGroup>
 
 </Project>
