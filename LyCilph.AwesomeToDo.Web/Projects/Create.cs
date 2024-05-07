@@ -20,10 +20,9 @@ public class Create : Endpoint<CreateProjectRequest, CreateProjectResponse>
         Summary(s => s.ExampleRequest = new CreateProjectRequest { Name = "Example Project" });
     }
 
-    public override async Task HandleAsync(CreateProjectRequest request, CancellationToken ct)
+    public override async Task HandleAsync(CreateProjectRequest request, CancellationToken cancellationToken)
     {
-        var result = await _mediator.Send(new CreateProjectCommand(request.Name!));
+        var result = await _mediator.Send(new CreateProjectCommand(request.Name!), cancellationToken);
         Response = new CreateProjectResponse(result, request.Name!);
-        return;
     }
 }

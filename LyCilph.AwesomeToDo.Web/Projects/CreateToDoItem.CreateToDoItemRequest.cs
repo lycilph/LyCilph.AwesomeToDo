@@ -5,8 +5,7 @@ namespace LyCilph.AwesomeToDo.Web.Projects;
 
 public class CreateToDoItemRequest
 {
-    public const string Route = "/Projects/{ProjectId:int}/ToDoItems";
-    public static string BuildRoute(int projectId) => Route.Replace("{ProjectId:int}", projectId.ToString());
+    public const string Route = "/Projects/{ProjectId}/ToDoItems";
 
     [Required]
     [FromRoute]
