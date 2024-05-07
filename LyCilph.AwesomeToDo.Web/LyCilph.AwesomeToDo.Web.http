@@ -1,6 +1,15 @@
 @LyCilph.AwesomeToDo.Web_HostAddress = http://localhost:5106
 
-GET {{LyCilph.AwesomeToDo.Web_HostAddress}}/weatherforecast/
+Post {{LyCilph.AwesomeToDo.Web_HostAddress}}/Projects
+Content-Type: application/json
+
+{
+    "name": "Test project"
+}
+
+###
+
+GET {{LyCilph.AwesomeToDo.Web_HostAddress}}/Projects/1
 Accept: application/json
 
 ###
