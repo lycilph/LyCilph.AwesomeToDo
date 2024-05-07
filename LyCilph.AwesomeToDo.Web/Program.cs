@@ -42,12 +42,12 @@ public class Program
 
         var app = builder.Build();
 
-        if (app.Environment.IsDevelopment())
-            app.UseSwaggerGen(uiConfig: config => config.DocExpansion = "list");
-
         app.UseHttpsRedirection();
         app.UseAuthorization();
         app.UseFastEndpoints();
+
+        if (app.Environment.IsDevelopment())
+            app.UseSwaggerGen(uiConfig: config => config.DocExpansion = "list");
 
         SeedDatabase(app);
 

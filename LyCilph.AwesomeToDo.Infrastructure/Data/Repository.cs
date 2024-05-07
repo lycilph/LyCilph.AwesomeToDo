@@ -23,13 +23,33 @@ public class Repository<T> : IRepository<T> where T : class, IAggregateRoot
 
     public virtual async Task UpdateAsync(T entity, CancellationToken cancellationToken = default)
     {
-        _dbContext.Set<T>().Update(entity);
+        throw new NotImplementedException();
 
-        await _dbContext.SaveChangesAsync(cancellationToken);
+        //_dbContext.Set<T>().Update(entity);
+
+        //await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
-    public async Task<T?> FirstOrDefault(Expression<Func<T, bool>> filter)
+    public async Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> filter, CancellationToken cancellationToken = default)
     {
-        return await _dbContext.Set<T>().AsQueryable().FirstOrDefaultAsync(filter);
+        throw new NotImplementedException();
+
+        //return await _dbContext.Set<T>().AsQueryable().FirstOrDefaultAsync(filter, cancellationToken);
+    }
+
+    public async Task<T?> FirstOrDefaultAsync<TProperty>(Expression<Func<T, bool>> filter, Expression<Func<T, TProperty>> include, CancellationToken cancellationToken = default)
+    {
+        return await _dbContext.Set<T>().Include(include).AsQueryable().FirstOrDefaultAsync(filter, cancellationToken);
+    }
+
+    public async Task<List<T>> ListAsync(CancellationToken cancellationToken = default)
+    {
+        return await _dbContext.Set<T>().ToListAsync(cancellationToken);
+    }
+
+    public async Task<List<T>> ListAsync(Expression<Func<T, bool>> filter, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+        //return await _dbContext.Set<T>().Where(filter).ToListAsync(cancellationToken);
     }
 }

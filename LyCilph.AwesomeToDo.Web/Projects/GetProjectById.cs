@@ -24,9 +24,9 @@ public class GetProjectById : EndpointWithMapping<GetProjectByIdRequest, GetProj
 
     public override async Task HandleAsync(GetProjectByIdRequest request, CancellationToken ct)
     {
-        var proj = await _repository.FirstOrDefault(p => p.Id == request.ProjectId);
+        var proj = await _repository.FirstOrDefaultAsync(p => p.Id == request.ProjectId, p => p.Items);
         if (proj == null)
-        { 
+        {
             await SendNotFoundAsync(ct);
             return;
         }
