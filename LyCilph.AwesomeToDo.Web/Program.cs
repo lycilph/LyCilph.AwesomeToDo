@@ -4,6 +4,9 @@ using LyCilph.AwesomeToDo.UseCases.Projects.Create;
 using LyCilph.AwesomeToDo.Infrastructure;
 using System.Reflection;
 using LyCilph.AwesomeToDo.Infrastructure.Data;
+using Serilog;
+using LyCilph.SharedKernel;
+using MediatR;
 
 namespace LyCilph.AwesomeToDo.Web;
 
@@ -11,6 +14,13 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        var logger = Log.Logger = new LoggerConfiguration()
+            .Enrich.FromLogContext()
+            .WriteTo.Console()
+            .CreateLogger();
+
+        logger.Information("Starting web host");
+
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
@@ -56,17 +66,7 @@ public class Program
         };
 
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(assemblies!));
-
-  //      var mediatRAssemblies = new[]
-  //      {
-  //  Assembly.GetAssembly(typeof(Project)), // Core
-  //  Assembly.GetAssembly(typeof(CreateContributorCommand)), // UseCases
-  //  Assembly.GetAssembly(typeof(InfrastructureServiceExtensions)) // Infrastructure
-  //};
-
-  //      builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(mediatRAssemblies!));
-  //      builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
-  //      builder.Services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
+        services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
     }
 
     public static void SeedDatabase(WebApplication app)
@@ -83,8 +83,8 @@ public class Program
             }
             catch (Exception ex)
             {
-                // Log stuff here
-                throw;
+                var logger = services.GetRequiredService<ILogger<Program>>();
+                logger.LogError(ex, "An error occurred seeding the DB. {exceptionMessage}", ex.Message);
             }
         }
     }
